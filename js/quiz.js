@@ -7,7 +7,8 @@ class quiz extends Phaser.Scene
 
     create()
     {
-
+        let text = this.add.text(400,400,"hello");
+        text.setScale(3);
     }
 }
 
@@ -17,8 +18,8 @@ class quiz extends Phaser.Scene
 
 let config = 
 {
-    width: 800,
-    height: 600,
+    width: 720,
+    height: 1360,
     pixelArt: true,
     backgroundColor: "#678a7a",
     autoCenter: true,
