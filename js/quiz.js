@@ -30,7 +30,7 @@ class quizScene extends Phaser.Scene
 let config = 
 {
     type: Phaser.AUTO,
-    input: { mouse: { preventDefaultWheel: false } },
+    input: { mouse: { preventDefaultWheel: false } }, //Allow for scrolling over the phaser window
     debug: true,
     backgroundColor: "#678a7a",
     pixelart: true,
@@ -38,9 +38,7 @@ let config =
     scale: {
         mode: Phaser.Scale.RESIZE, //Using the RESIZE Scale mode means that CSS can be used to define how to game will be viewed
         parent: 'quizDiv', //Make Phaser Viewport fit into HTML div
-        autoCenter: Phaser.Scale.CENTER_BOTH,
-        width: 800,
-        height: 600
+        autoCenter: Phaser.Scale.CENTER_BOTH
     },
     scene: [quizScene]
 }
