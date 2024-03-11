@@ -7,18 +7,35 @@ class quizScene extends Phaser.Scene
 
     preload()
     {
-
+        this.load.image("square", "../images/square.png")
     }
 
     create()
     {
-        let text = this.add.text(400,300,"hello").setOrigin(0.5,0.5).setResolution(10);
-        text.setStyle({
+        let { width, height } = this.sys.game.canvas;
+        this.add.text(width/2,height/4,"Interactive Learning Experience").setOrigin(0.5,0.5).setResolution(10).setStyle({
             fontSize: '64px',
             fontFamily: 'Arial, Helvetica, sans-serif',
             color: '#000000',
             align: 'center',
-        })
+        });
+
+        let startQuizButText = this.add.text(width/2,height/2,"Start").setOrigin(0.5,0.5).setResolution(10).setStyle({
+            fontSize: '64px',
+            fontFamily: 'Arial, Helvetica, sans-serif',
+            color: '#000000',
+            align: 'center',
+        });
+
+        let startQuizButRect = this.add.image(width/2,height/2,"square").setScale(200,100).setTint(0xffffff).setDepth(-1);
+
+        startQuizButText.setInteractive().on("pointerdown", () => startQuiz());
+        startQuizButRect.setInteractive().on("pointerdown", () => startQuiz());
+
+        function startQuiz()
+        {
+            console.log("start");
+        }
 
     }
 }
@@ -36,7 +53,7 @@ let config =
     pixelart: true,
     parent: quizScene,
     scale: {
-        mode: Phaser.Scale.RESIZE, //Using the RESIZE Scale mode means that CSS can be used to define how to game will be viewed
+        mode: Phaser.Scale.FIT, //Using the FIT scale mode will resize the game view to fit into the available space, relatiley responsive
         parent: 'quizDiv', //Make Phaser Viewport fit into HTML div
         autoCenter: Phaser.Scale.CENTER_BOTH
     },
