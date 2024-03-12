@@ -19,7 +19,7 @@ main  {
 }
 
 #quizDiv{
-    max-width: 800px;
+    max-width: 100%;
     max-height: 600px;
     margin-top: 100px;
     margin-bottom: 100px;

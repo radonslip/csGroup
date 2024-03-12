@@ -13,24 +13,24 @@ class quizScene extends Phaser.Scene
     create()
     {
         let { width, height } = this.sys.game.canvas;
-        this.add.text(width/2,height/4,"Interactive Learning Experience").setOrigin(0.5,0.5).setResolution(10).setStyle({
-            fontSize: '64px',
-            fontFamily: 'Arial, Helvetica, sans-serif',
-            color: '#000000',
-            align: 'center',
-        });
 
-        let startQuizButText = this.add.text(width/2,height/2,"Start").setOrigin(0.5,0.5).setResolution(10).setStyle({
+        // define the text style at the beginning of the scene
+        let textStyle = {
             fontSize: '64px',
             fontFamily: 'Arial, Helvetica, sans-serif',
             color: '#000000',
             align: 'center',
-        });
+        }
+
+        this.add.text(width/2,height/4,"Interactive Learning Experience").setOrigin(0.5,0.5).setResolution(10).setStyle(textStyle);
+
+        let startQuizButText = this.add.text(width/2,height/2,"Start").setOrigin(0.5,0.5).setResolution(10).setStyle(textStyle);
 
         let startQuizButRect = this.add.image(width/2,height/2,"square").setScale(200,100).setTint(0xffffff).setDepth(-1);
 
         startQuizButText.setInteractive().on("pointerdown", () => startQuiz());
         startQuizButRect.setInteractive().on("pointerdown", () => startQuiz());
+
 
         function startQuiz()
         {
