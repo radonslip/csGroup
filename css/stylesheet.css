@@ -7,7 +7,7 @@ body {
     font-size: 1rem;
     line-height: 1.25rem;
 }
-#wrapper {
+.wrapper {
     max-width: 70rem;
     margin: auto auto;
     background-color: #ffffff;
@@ -24,4 +24,27 @@ main  {
     margin-top: 100px;
     margin-bottom: 100px;
     color: red;
+}
+.menu {
+    display: flex;
+    flex-direction: block;
+    justify-content: space-between;
+}
+
+.menu li {
+    display: block;
+    color: #000;
+    background-color: #c7ffee;
+	padding: 5px;
+	border: 2px solid #c7ffee;
+	border-radius: 2px;
+}
+
+
+@media (min-width: 50rem) {
+    .menu li
+	{
+		display: inline;
+		margin: 0 1rem 0 0;
+	}
 }
