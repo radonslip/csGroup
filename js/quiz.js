@@ -7,7 +7,7 @@ class startQuiz extends Phaser.Scene
 
     preload()
     {
-        let web = false;
+        let web = true;
 
         if(web)
         {
