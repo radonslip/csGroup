@@ -7,7 +7,7 @@ class startQuiz extends Phaser.Scene
 
     preload()
     {
-        this.load.image("square", "../images/square.png")
+        this.load.image("square", "../csGroup/images/square.png")
     }
 
     create()
