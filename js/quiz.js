@@ -7,7 +7,16 @@ class startQuiz extends Phaser.Scene
 
     preload()
     {
-        this.load.image("square", "../csGroup/images/square.png")
+        let web = false;
+
+        if(web)
+        {
+            this.load.image("square", "../csGroup/images/square.png");
+        }
+        else
+        {
+            this.load.image("square", "../images/square.png");
+        }
     }
 
     create()
